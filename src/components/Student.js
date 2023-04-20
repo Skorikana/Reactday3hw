@@ -1,20 +1,16 @@
 import React from 'react' ;
 import Score from "./Score";
-
-const Person =(props) => {
+const Person =({name, bio, scores }) => {
 return(
    <div>
-    {props.students.map(student =>(
-    <div >
-      <h2>{student.name}</h2>
+        <div >
+      <h2>{name}</h2>
       <h5>Bio</h5>
-      {student.bio}
-      
+      {bio}
       <h4>Scores</h4>
-      <Score scores ={student.scores} />
-     
+      {scores.map((scores) => <Score date ={scores.date} scores= {scores.scores}/> )}    
 </div>
- ))}
+
  </div>
  );
     }

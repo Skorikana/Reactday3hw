@@ -26,7 +26,7 @@ const students= [
 
   return (
   <div className="App">
-        { <Person students ={students}/> }
+{students.map((element) => <Person name={ element.name} bio={element.bio} scores= {element.scores}/> )}
     </div>
 );
 }
